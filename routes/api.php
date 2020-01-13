@@ -16,6 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::middleware('auth:api')->get('/test', function (Request $request) {
     return "123";
+});
+
+$api->version('v1', function ($api) {
+    $api->get('apitest', function(){
+	return [123];
+   });
 });
