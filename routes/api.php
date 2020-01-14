@@ -20,9 +20,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth:api')->get('/test', function (Request $request) {
     return "123";
 });
-
-$api->version('v1', function ($api) {
-    $api->get('apitest', function(){
-	return [123];
-   });
-});
